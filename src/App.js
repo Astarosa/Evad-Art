@@ -10,29 +10,28 @@ class App extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      ids: []
+      backgroundImageUrl: '',
     };
   }
 
-  getBackGroundImage = () => {
-    axios.get('https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=9')
+  getBackGroundImage = async() => {
+    const backgroundIndex = Math.round(Math.random()*40);
+    const ids = await axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?departmentIds=9&q=amelie')
       .then(res => res.data)
       .then(
-        (data) => {
-          console.log(data.objectIDs);
-          console.log(Object.keys(data));
-          this.setState({
-            isLoaded: true,
-            ids: data.objectIDs
-          });
-        },
-        (error) => {
+        data => data.objectIDs,
+        /*(error) => {
           this.setState({
             isLoaded: true,
             error
           });
-        }
+        }*/
       );
+      const url = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${ids[backgroundIndex]}`)
+      .then(result => result.data)
+      .then(data => data.primaryImageSmall)
+
+      this.setState({ backgroundImageUrl: url })
   }
 
   componentDidMount () {
@@ -42,7 +41,7 @@ class App extends React.Component {
   render () {
     return (
       <div className='App'>
-        <Header />
+        <Header backgroundImageUrl={this.state.backgroundImageUrl}/>
         <Home />
       </div>
     );
