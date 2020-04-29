@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Banner = () => {
   return (
@@ -6,7 +6,7 @@ const Banner = () => {
       <h1>Title</h1>
       <h2>under-tittle</h2>
     </header>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;
