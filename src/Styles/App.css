@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   font-family:Montserrat;
+  margin:0 ;
+  padding: 0;
 }
 
 .App-logo {
@@ -36,4 +38,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+  

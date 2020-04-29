@@ -1,0 +1,19 @@
+.banner-background {
+  height: 60vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;  
+}
+
+.banner-background h1, h2 {
+  color: white;
+}
+
+.banner-background h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
