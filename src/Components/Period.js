@@ -27,7 +27,9 @@ class Period extends React.Component {
                     </button>
                 </div>
                 <div className={this.state.open ? 'period-bloc-content opened' : 'period-bloc-content closed'}>
-                    <p>{this.props.content}</p>
+                    <p className='period-content'>{this.props.content.text}</p>
+                    <img className='period-illustration' src={this.props.content.illustration} alt={this.props.description}/>
+                    <p className='period-description'>{this.props.content.description}</p>
                 </div>
             </div>
             )

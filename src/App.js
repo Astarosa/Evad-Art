@@ -1,8 +1,6 @@
 import React from 'react';
 import './Styles/App.css';
 import Header from './Components/Header';
-import Home from './Pages/Home';
-import Period from './Components/Period';
 import axios from 'axios';
 import PeriodsList from './Components/PeriodsList';
 

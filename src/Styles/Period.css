@@ -76,3 +76,13 @@
     height:auto;
     top:100%;
 }
+
+.period-content {
+    padding: 20px;
+    text-align: justify;
+    line-height: 24px;
+}
+.period-description {
+    font-style: italic;
+    padding: 0 20px 0 20px;
+}
