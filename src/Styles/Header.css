@@ -1,0 +1,17 @@
+.banner-background {
+  height: 80vh;
+  background-image: url(../Images/background-banner.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-background h1, h2 {
+  color: white;
+}
+
+.banner-background h1 {
+  font-weight: 900;
+}
