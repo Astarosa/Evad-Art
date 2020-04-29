@@ -1,5 +1,6 @@
 .period-bloc-container {
     width:90vw;
+    max-width: 500px;
     margin:auto;
     margin-top:20px;
 }
@@ -40,13 +41,16 @@
     position:absolute;
     bottom:0;
 }
+.period-bloc-container .period-bloc-banner .open-content-container span {
+    transition:all 0.5s ease-in-out;
+}
 .period-bloc-container .period-bloc-banner .open-content-container .open-content {
     display:block;
     background-image:url('../Images/open-period.png');
     background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
-    transform:rotate(90deg);
+    transform:rotate(450deg);
     width: 20px;
     height:20px;
     margin:0 auto;
@@ -57,7 +61,7 @@
     background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
-    transform:rotate(-90deg);
+    transform:rotate(-450deg);
     width: 20px;
     height:20px;
     margin:0 auto;

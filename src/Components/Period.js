@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/Period.css';
+import GetPeriodObjects from '../Requests/GetPeriodObjects'
 
 //Ici class Period qui donne le squelette d'une periode affichée, avec les props title, date (remplacer le contneu du h3) plus le contenu
 
@@ -32,7 +33,7 @@ class Period extends React.Component {
                     <p className='period-description'>{this.props.content.description}</p>
                 </div>
             </div>
-            )
+        )
     }    
 }
 
