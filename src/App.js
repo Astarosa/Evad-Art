@@ -1,49 +1,42 @@
 import React from 'react';
 import './Styles/App.css';
 import Header from './Components/Header';
-import Home from './Pages/Home';
-import Period from './Components/Period';
 import axios from 'axios';
+import PeriodsList from './Components/PeriodsList';
+
 
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      error: null,
-      isLoaded: false,
       backgroundImageUrl: '',
     };
   }
 
   getBackGroundImage = async() => {
-    const backgroundIndex = Math.round(Math.random()*40);
-    const ids = await axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?departmentIds=9&q=amelie')
+    const backgroundIndex = Math.round(Math.random() * 714);
+    const ids = await axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?q=a&departmentIds=9')
       .then(res => res.data)
-      .then(
-        data => data.objectIDs,
-        /*(error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }*/
-      );
-      const url = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${ids[backgroundIndex]}`)
+      .then(data => data.objectIDs)
+  
+    const url = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${ids[backgroundIndex]}`)
       .then(result => result.data)
       .then(data => data.primaryImageSmall)
 
-      this.setState({ backgroundImageUrl: url })
+    this.setState({ backgroundImageUrl: url })
   }
 
   componentDidMount () {
-    return this.getBackGroundImage();
+    return (
+      this.getBackGroundImage()
+    )
   }
 
   render () {
     return (
       <div className='App'>
         <Header backgroundImageUrl={this.state.backgroundImageUrl}/>
-        <Home />
+        <PeriodsList/>
       </div>
     );
   }

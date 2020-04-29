@@ -1,6 +1,8 @@
 import React from 'react';
 import '../Styles/Period.css';
 
+//Ici class Period qui donne le squelette d'une periode affichée, avec les props title, date (remplacer le contneu du h3) plus le contenu
+
 class Period extends React.Component {
     constructor(props) {
         super(props);
@@ -17,15 +19,17 @@ class Period extends React.Component {
     render() {
         return(
             <div className="period-bloc-container">
-                <div className={this.state.open ? "period-bloc-banner opened" : "period-bloc-banner closed"}>
-                    <h2>Antiquité</h2>
-                    <h3>VIIème siècle avant JC - 1er siècle avant JC</h3>
-                    <div onClick={this.handleOpen} className="open-content-container">
+                <div className={this.state.open ? "period-bloc-banner opened" : "period-bloc-banner closed"} style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${this.props.url})`}}>
+                <h2>{this.props.title}</h2>
+                    <h3>{this.props.date}</h3>
+                    <button onClick={this.handleOpen} className="open-content-container">
                         <span className={this.state.open ? 'close-content' : 'open-content'} />
-                    </div>
+                    </button>
                 </div>
                 <div className={this.state.open ? 'period-bloc-content opened' : 'period-bloc-content closed'}>
-                    <p>LOREM IPSUM</p>
+                    <p className='period-content'>{this.props.content.text}</p>
+                    <img className='period-illustration' src={this.props.content.illustration} alt={this.props.description}/>
+                    <p className='period-description'>{this.props.content.description}</p>
                 </div>
             </div>
             )
