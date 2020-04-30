@@ -8,14 +8,17 @@ class Period extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      periodObjects: []
     };
   }
 
-  handleOpen = async () => {
+  handleOpen = async () => {  
     const open = !this.state.open;
     this.setState({ open });
     const periodObjects = await GetPeriodObjects(this.props.request, this.props.id);
+    console.log(periodObjects);
+    this.setState({ periodObjects });
   }
 
   render () {
@@ -32,6 +35,16 @@ class Period extends React.Component {
           <p className='period-content'>{this.props.content.text}</p>
           <img className='period-illustration' src={this.props.content.illustration} alt={this.props.description} />
           <p className='period-description'>{this.props.content.description}</p>
+          <div className='discover-object-container'>
+            <h4>Explorer des oeuvres de cette période</h4>
+            {this.state.periodObjects.slice(0, 3).map(object => (
+              <div className='object-container' key={object.objectURL}>
+                <a href={object.objectURL} target='_blank' rel='noopener noreferrer'><div className='object-image-container' style={{backgroundImage: `url(${object.primaryImageSmall})`}}/></a>
+                <h5>{object.title}</h5>
+                <h6>{object.artistDisplayName}</h6>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
