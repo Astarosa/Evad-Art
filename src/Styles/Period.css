@@ -1,0 +1,211 @@
+.period-bloc-container {
+    width:90vw;
+    max-width: 500px;
+    margin:auto;
+    margin-top:20px;
+}
+.intro {
+    color:black;
+    text-shadow:none;
+    width:90vw;
+    max-width:700px;
+    margin:0 auto;
+    font-weight:lighter;
+    margin-bottom:100px;
+    margin-top:100px;
+    letter-spacing: 0.09rem;
+    font-style:italic;
+    padding: 0 20px 0 20px;
+}
+.author-quote {
+    margin-top:-50px;
+    margin-bottom:100px;
+}
+.period-bloc-container .period-bloc-banner {
+    height:150px;
+    width:100%;
+    background-color: grey;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    border-radius:15px;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:relative;
+    transition:all 0.2s ease-in-out;
+}   
+.period-bloc-container .period-bloc-banner:hover {
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1.01);
+}
+.period-bloc-container .period-bloc-banner.opened {
+    border-radius:15px 15px 0 0;
+}
+.period-bloc-container .period-bloc-banner h2, .period-bloc-container .period-bloc-banner h3 {
+    margin-block-end:0px;
+    margin-block-start:0px;
+    color:white;
+}
+.period-bloc-container .period-bloc-banner h2 {
+    margin-bottom:10px;
+}
+.period-bloc-container .period-bloc-banner h3 {
+    font-weight:300;
+    font-size:16px;
+}
+.period-bloc-container .period-bloc-banner .open-content-container {
+    width:100%;
+    height:30px;
+    background: none;
+    border: none;
+    position:absolute;
+    bottom:0;
+}
+.period-bloc-container .period-bloc-banner .open-content-container span {
+    transition:all 0.5s ease-in-out;
+}
+.period-bloc-container .period-bloc-banner .open-content-container span:hover {
+    cursor: pointer;
+}
+.period-bloc-container .period-bloc-banner .open-content-container .open-content {
+    display:block;
+    background-image:url('../Images/open-period.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    transform:rotate(450deg);
+    width: 20px;
+    height:20px;
+    margin:0 auto;
+}
+.period-bloc-container .period-bloc-banner .open-content-container .close-content {
+    display:block;
+    background-image:url('../Images/open-period.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    transform:rotate(-450deg);
+    width: 20px;
+    height:20px;
+    margin:0 auto;
+}
+.period-bloc-container .period-bloc-content {
+    transition:all 0.2s ease-in-out;
+    background-color:#efefef;
+    overflow:hidden;
+    border-radius:0 0 15px 15px;
+    width:100%;
+}
+.period-bloc-container .period-bloc-content.closed {
+    height:0px;
+}
+.period-bloc-container .period-bloc-content.opened {
+    height:auto;
+    top:100%;
+}
+
+.period-content {
+    padding: 20px;
+    text-align: justify;
+    line-height: 24px;
+}
+.period-description {
+    font-style: italic;
+    padding: 0 20px 0 20px;
+}
+.object-container {
+    width:300px;
+    margin:0 auto;
+}
+.object-image-container {
+    width:300px;
+    height:400px;
+    background-position:center;
+    background-size:cover;
+    transform:scale(1);
+    position:relative;
+    transition:all 0.2s ease-in-out;
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+}
+.object-image-container::before, .period-bloc-banner::before {
+    position:absolute;
+    content:'';
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image:linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, rgba(239, 239, 239, 0.3) 80%);
+    transition:all 0.2s ease-in-out;
+    background-size:150%;
+}
+.period-bloc-container .period-bloc-banner:hover::before {
+    background-size:100%;
+}
+.object-image-container:hover::before {
+    background-size:100%;
+} 
+.object-image-container:hover {
+    transform:scale(1.01);
+    box-shadow:0 0 7px rgba(0, 0, 0, 0.6)
+}
+.object-container h5 {
+    margin-block-end:0px;
+    font-weight:400;
+}
+.object-container h6 {
+    font-weight:400;
+    margin-block-start:5px;
+    font-style:italic;
+}
+.loading {
+    width:100px;
+    height:100px;
+    background-image:url(../Images/loading-2.gif);
+    background-size: 150%;
+    background-position: center;
+    margin:0 auto;
+}
+@media only screen and (min-width:1024px) {
+    .intro {
+        margin-bottom:200px;
+        margin-top:200px;
+    }
+    .author-quote {
+        margin-top:-150px;
+    }
+    .all-period-bloc-container {
+        width:600px;
+        position:relative;
+        height:auto;
+        margin:0 auto;
+    }
+    .time-arrow {
+        height:100%;
+        width:15px;
+        border-radius:15px;
+        border:4px solid #efefef;
+        left:50%;
+        transform:translateX(-50%);
+        background-color:rgba(0, 0, 0, 0.2);;
+        z-index:999999;
+        position:absolute;
+    }
+    .time-arrow::before {
+        position:sticky;
+        width:15px;
+        height:15px;
+        border-radius:100%;
+        background-color:#424242;
+        top:50%;
+        content:'';
+        display:block;
+    }
+    .all-period-bloc-container .period-bloc-container:nth-child(2), .all-period-bloc-container .period-bloc-container:nth-child(4) {
+        margin-left:-250px;
+    }
+    .all-period-bloc-container .period-bloc-container:nth-child(3), .all-period-bloc-container .period-bloc-container:nth-child(5) {
+        margin-right:-250px;
+    }
+}
