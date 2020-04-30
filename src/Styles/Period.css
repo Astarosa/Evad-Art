@@ -4,6 +4,16 @@
     margin:auto;
     margin-top:20px;
 }
+.intro {
+    color:black;
+    text-shadow:none;
+    width:100vw;
+    max-width:700px;
+    margin:0 auto;
+    font-weight:lighter;
+    margin-bottom:200px;
+    margin-top:200px;
+}
 .period-bloc-container .period-bloc-banner {
     height:150px;
     width:100%;
@@ -141,4 +151,72 @@
     background-size: 150%;
     background-position: center;
     margin:0 auto;
+}
+@media only screen and (min-width:1024px) {
+    .all-period-bloc-container {
+        width:600px;
+        position:relative;
+        height:auto;
+        margin:0 auto;
+    }
+    .time-arrow {
+        width:1px;
+        height:100%;
+        width:2px;
+        left:50%;
+        transform:translateX(-50%);
+        background-color:black;
+        z-index:999999;
+        position:absolute;
+    }
+    .time-arrow::before {
+        position:sticky;
+        width:15px;
+        height:15px;
+        border-radius:100%;
+        background-color:green;
+        top:50%;
+        content:'';
+        display:block;
+        transform: translateX(-6.5px);
+
+    }
+    .all-period-bloc-container .period-bloc-container:nth-child(2), .all-period-bloc-container .period-bloc-container:nth-child(4) {
+        margin-left:-250px;
+    }/*
+    .all-period-bloc-container .period-bloc-container:nth-child(2) .period-bloc-banner::before, .all-period-bloc-container .period-bloc-container:nth-child(4) .period-bloc-banner::before {
+        position:relative;
+        right: -300px;
+        top: 35px;
+        content:'';
+        width:10px;
+        height:10px;
+        border-radius:100%;
+        background-color:black;
+        display:block;
+        z-index: 99999999999999;
+        transition:all 0.2s ease-in-out;
+    }*/
+    .all-period-bloc-container .period-bloc-container:nth-child(3), .all-period-bloc-container .period-bloc-container:nth-child(5) {
+        margin-right:-250px;
+    }
+    /*
+    .all-period-bloc-container .period-bloc-container:nth-child(3) .period-bloc-banner::before, .all-period-bloc-container .period-bloc-container:nth-child(5) .period-bloc-bannerbefore::before {
+        position:relative;
+        left: -300px;
+        top: 35px;
+        content:'';
+        width:10px;
+        height:10px;
+        border-radius:100%;
+        background-color:black;
+        display:block;
+        z-index: 99999999999999;
+        transition:all 0.2s ease-in-out;
+    }
+    .all-period-bloc-container .period-bloc-container .period-bloc-banner.opened::before {
+        background-color:green;
+        width:20px;
+        height:20px;
+    }*/
 }

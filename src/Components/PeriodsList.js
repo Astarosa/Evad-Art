@@ -5,7 +5,8 @@ import periods from '../Requests/periods';
 class PeriodsList extends React.Component {
   render () {
     return (
-      <div>
+      <div className='all-period-bloc-container'>
+        <div className='time-arrow' />
         {periods.map(period => (
           <Period key={period.id} title={period.title} date={period.date} content={period.content} url={period.url} request={period.request} id={period.id} />
         ))}
