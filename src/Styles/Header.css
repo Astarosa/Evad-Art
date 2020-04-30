@@ -7,6 +7,27 @@
   align-items: center;
   background-position: center;
   background-size: cover;
+  position:relative;
+}
+.banner-background::before {
+  position:absolute;
+  content:'';
+  bottom:0;
+  width:100%;
+  height:5px;
+  background-color:black;
+  animation-name:timerAnimation;
+  animation-duration:4.2s;
+  left:0;
+  animation-iteration-count:infinite;
+}
+@keyframes timerAnimation {
+  from {
+    width:100%;
+  }
+  to {
+    width:0px;
+  }
 }
 .banner-background h1, h2 {
   color: white;
