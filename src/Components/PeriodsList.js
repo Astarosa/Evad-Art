@@ -8,7 +8,7 @@ class PeriodsList extends React.Component {
       <div className='all-period-bloc-container'>
         <div className='time-arrow' />
         {periods.map(period => (
-          <Period key={period.id} title={period.title} date={period.date} content={period.content} url={period.url} request={period.request} id={period.id} />
+          <Period className='period-item' key={period.id} title={period.title} date={period.date} content={period.content} url={period.url} request={period.request} id={period.id} />
         ))}
       </div>
     );
