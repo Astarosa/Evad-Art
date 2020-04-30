@@ -50,7 +50,8 @@ const periods = [
     url: artMedieval
   },
   {
-    id: 21,
+    id: 9,
+    request: 'abstract',
     title: 'Art Moderne',
     date: 'XXème siècle ap. .J-C.',
     content:

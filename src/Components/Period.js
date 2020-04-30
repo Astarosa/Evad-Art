@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/Period.css';
 import GetPeriodObjects from '../Requests/GetPeriodObjects';
+import ModernArt from './ModernArt.json';
 
 // Ici class Period qui donne le squelette d'une periode affichée, avec les props title, date (remplacer le contneu du h3) plus le contenu
 
@@ -9,16 +10,17 @@ class Period extends React.Component {
     super(props);
     this.state = {
       open: false,
+      isLoaded: false,
       periodObjects: []
     };
   }
 
-  handleOpen = async () => {  
+  handleOpen = async () => {
     const open = !this.state.open;
     this.setState({ open });
     const periodObjects = await GetPeriodObjects(this.props.request, this.props.id);
     console.log(periodObjects);
-    this.setState({ periodObjects });
+    this.setState({ periodObjects, isLoaded: true });
   }
 
   render () {
@@ -37,13 +39,14 @@ class Period extends React.Component {
           <p className='period-description'>{this.props.content.description}</p>
           <div className='discover-object-container'>
             <h4>Explorer des oeuvres de cette période</h4>
-            {this.state.periodObjects.slice(0, 3).map(object => (
-              <div className='object-container' key={object.objectURL}>
-                <a href={object.objectURL} target='_blank' rel='noopener noreferrer'><div className='object-image-container' style={{backgroundImage: `url(${object.primaryImageSmall})`}}/></a>
-                <h5>{object.title}</h5>
-                <h6>{object.artistDisplayName}</h6>
-              </div>
-            ))}
+            {this.state.isLoaded === false ? <div className='loading' />
+              : this.state.periodObjects.slice(0, 3).map(object => (
+                <div className='object-container' key={object.objectURL}>
+                  <a href={object.objectURL} target='_blank' rel='noopener noreferrer'><div className='object-image-container' style={{ backgroundImage: `url(${object.primaryImageSmall})` }} /></a>
+                  <h5>{object.title}</h5>
+                  <h6>{object.artistDisplayName !== '' ? object.artistDisplayName : 'artiste inconnu'}</h6>
+                </div>
+              ))}
           </div>
         </div>
       </div>

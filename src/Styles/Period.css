@@ -44,6 +44,9 @@
 .period-bloc-container .period-bloc-banner .open-content-container span {
     transition:all 0.5s ease-in-out;
 }
+.period-bloc-container .period-bloc-banner .open-content-container span:hover {
+    cursor: pointer; /* marche pas wtf */
+}
 .period-bloc-container .period-bloc-banner .open-content-container .open-content {
     display:block;
     background-image:url('../Images/open-period.png');
@@ -121,4 +124,21 @@
 .object-image-container:hover {
     transform:scale(1.01);
     box-shadow:0 0 7px rgba(0, 0, 0, 0.6)
+}
+.object-container h5 {
+    margin-block-end:0px;
+    font-weight:400;
+}
+.object-container h6 {
+    font-weight:400;
+    margin-block-start:5px;
+    font-style:italic;
+}
+.loading {
+    width:100px;
+    height:100px;
+    background-image:url(../Images/loading-2.gif);
+    background-size: 150%;
+    background-position: center;
+    margin:0 auto;
 }
