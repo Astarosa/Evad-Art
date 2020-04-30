@@ -62,6 +62,6 @@ const periods = [
     },
     url: artModerne
   }
-];
+]
 
 export default periods;

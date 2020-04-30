@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
+    this.setState({ backgroundImageUrl: this.getBackGroundImage() });
     this.timerID = setInterval(() => {
       this.setState({ backgroundImageUrl: this.getBackGroundImage() });
     }, 4000);

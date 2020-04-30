@@ -7,17 +7,18 @@
 .intro {
     color:black;
     text-shadow:none;
-    width:100vw;
+    width:90vw;
     max-width:700px;
     margin:0 auto;
     font-weight:lighter;
-    margin-bottom:200px;
-    margin-top:200px;
+    margin-bottom:100px;
+    margin-top:100px;
     letter-spacing: 0.09rem;
-    font-style:italic
+    font-style:italic;
+    padding: 0 20px 0 20px;
 }
 .author-quote {
-    margin-top:-150px;
+    margin-top:-50px;
 }
 .period-bloc-container .period-bloc-banner {
     height:150px;
@@ -32,7 +33,12 @@
     background-size:cover;
     background-repeat:no-repeat;
     position:relative;
+    transition:all 0.2s ease-in-out;
 }   
+.period-bloc-container .period-bloc-banner:hover {
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1.01);
+}
 .period-bloc-container .period-bloc-banner.opened {
     border-radius:15px 15px 0 0;
 }
@@ -60,7 +66,7 @@
     transition:all 0.5s ease-in-out;
 }
 .period-bloc-container .period-bloc-banner .open-content-container span:hover {
-    cursor: pointer; /* marche pas wtf */
+    cursor: pointer;
 }
 .period-bloc-container .period-bloc-banner .open-content-container .open-content {
     display:block;
@@ -122,7 +128,7 @@
     transition:all 0.2s ease-in-out;
     box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
 }
-.object-image-container::before {
+.object-image-container::before, .period-bloc-banner::before {
     position:absolute;
     content:'';
     top:0;
@@ -132,6 +138,9 @@
     background-image:linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, rgba(239, 239, 239, 0.3) 80%);
     transition:all 0.2s ease-in-out;
     background-size:150%;
+}
+.period-bloc-container .period-bloc-banner:hover::before {
+    background-size:100%;
 }
 .object-image-container:hover::before {
     background-size:100%;
@@ -158,6 +167,13 @@
     margin:0 auto;
 }
 @media only screen and (min-width:1024px) {
+    .intro {
+        margin-bottom:200px;
+        margin-top:200px;
+    }
+    .author-quote {
+        margin-top:-150px;
+    }
     .all-period-bloc-container {
         width:600px;
         position:relative;
