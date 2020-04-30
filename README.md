@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Release
+
+The release 1.0 is available at [https://evadart.netlify.app/](https://evadart.netlify.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
