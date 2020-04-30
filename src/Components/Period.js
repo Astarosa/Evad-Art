@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/Period.css';
 import GetPeriodObjects from '../Requests/GetPeriodObjects';
-import ModernArt from './ModernArt.json';
 
 // Ici class Period qui donne le squelette d'une periode affichée, avec les props title, date (remplacer le contneu du h3) plus le contenu
 
