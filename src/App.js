@@ -42,6 +42,7 @@ class App extends React.Component {
         <h2 className='intro'>Au fil des époques, l'art s'est exprimé de différentes manières. S'il est difficile l'appréhender, rien n'est laissé au hasard. Pour voyager au sein du MetMuseum et découvrir l'art à différentes époques depuis votre canapé, suivez le guide !</h2>
         <PeriodsList />
         <h2 className='intro'>"L'histoire des artistes ne peut être racontée qu'une fois que sont devenues claires, après un certain laps de temps, l'influence que leur oeuvre a exercé sur d'autres et les contributions qu'ils ont faites à l'histoire de l'art en tant que telle"</h2>
+        <h3 className='author-quote'>Ernst Gombrich</h3>
       </div>
     );
   }
