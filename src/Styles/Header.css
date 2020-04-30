@@ -17,9 +17,12 @@
   height:5px;
   background-color:black;
   animation-name:timerAnimation;
-  animation-duration:4.2s;
+  animation-duration:4s;
   left:0;
   animation-iteration-count:infinite;
+}
+.banner-background.wait::before {
+  animation-play-state:paused;
 }
 @keyframes timerAnimation {
   from {

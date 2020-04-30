@@ -204,40 +204,8 @@
     }
     .all-period-bloc-container .period-bloc-container:nth-child(2), .all-period-bloc-container .period-bloc-container:nth-child(4) {
         margin-left:-250px;
-    }/*
-    .all-period-bloc-container .period-bloc-container:nth-child(2) .period-bloc-banner::before, .all-period-bloc-container .period-bloc-container:nth-child(4) .period-bloc-banner::before {
-        position:relative;
-        right: -300px;
-        top: 35px;
-        content:'';
-        width:10px;
-        height:10px;
-        border-radius:100%;
-        background-color:black;
-        display:block;
-        z-index: 99999999999999;
-        transition:all 0.2s ease-in-out;
-    }*/
+    }
     .all-period-bloc-container .period-bloc-container:nth-child(3), .all-period-bloc-container .period-bloc-container:nth-child(5) {
         margin-right:-250px;
     }
-    /*
-    .all-period-bloc-container .period-bloc-container:nth-child(3) .period-bloc-banner::before, .all-period-bloc-container .period-bloc-container:nth-child(5) .period-bloc-bannerbefore::before {
-        position:relative;
-        left: -300px;
-        top: 35px;
-        content:'';
-        width:10px;
-        height:10px;
-        border-radius:100%;
-        background-color:black;
-        display:block;
-        z-index: 99999999999999;
-        transition:all 0.2s ease-in-out;
-    }
-    .all-period-bloc-container .period-bloc-container .period-bloc-banner.opened::before {
-        background-color:green;
-        width:20px;
-        height:20px;
-    }*/
 }
